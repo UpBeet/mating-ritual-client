@@ -96,8 +96,6 @@ GameObject:
   - 224: {fileID: 22487662}
   - 222: {fileID: 22279352}
   - 114: {fileID: 11410496}
-  - 225: {fileID: 22540280}
-  - 114: {fileID: 11471870}
   m_Layer: 0
   m_Name: Start Game Panel
   m_TagString: Untagged
@@ -183,15 +181,13 @@ GameObject:
   - 224: {fileID: 22486134}
   - 222: {fileID: 22281012}
   - 114: {fileID: 11445904}
-  - 225: {fileID: 22529520}
-  - 114: {fileID: 11442652}
   m_Layer: 0
-  m_Name: Waiting for Host Text
+  m_Name: Waiting For Host Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &183134
 GameObject:
   m_ObjectHideFlags: 1
@@ -440,44 +436,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Your Room COde:'
---- !u!114 &11442652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a9aa97b4141446a7b18cfd8fa413e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHide: 1
-  startsHidden: 0
-  blocksRaycastsWhenHidden: 0
-  OnBeginHide:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnHidden:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnBeginShow:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnShown:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  fade: 1
-  hideDirection: 4
-  hideDistance: 0
-  hideRate: 5
 --- !u!114 &11445904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,44 +630,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &11471870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a9aa97b4141446a7b18cfd8fa413e62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onHide: 1
-  startsHidden: 1
-  blocksRaycastsWhenHidden: 0
-  OnBeginHide:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnHidden:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnBeginShow:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnShown:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HideableEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  fade: 1
-  hideDirection: 4
-  hideDistance: 0
-  hideRate: 5
 --- !u!114 &11474182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1019,10 +939,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22478956}
   m_RootOrder: 6
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 186.5, y: -624}
-  m_SizeDelta: {x: 333, y: 38}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22487662
 RectTransform:
@@ -1059,28 +979,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
---- !u!225 &22529520
-CanvasGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169818}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!225 &22540280
-CanvasGroup:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126666}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -22,6 +22,7 @@ public class MainMenuScreen : IGameState {
 	// Called when the server responds to a request to host the game.
 	private void BeginHostingGame (string roomkey) {
 		DataCache.RoomKey = roomkey;
+		DataCache.IsHost = true;
 		PushState ("Lobby");
 	}
 }

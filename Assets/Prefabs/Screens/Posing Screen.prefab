@@ -1530,6 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Posing
+  numFrames: 3
 --- !u!114 &11407428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1711,7 +1712,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11454692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11403384}
+        m_MethodName: SavePose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11434928
@@ -1802,6 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc69c06f4f96b4f028d04a22b1b98840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenKeyframes: 2
 --- !u!114 &11454692
 MonoBehaviour:
   m_ObjectHideFlags: 1

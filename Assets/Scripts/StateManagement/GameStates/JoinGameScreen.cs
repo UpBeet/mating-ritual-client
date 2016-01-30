@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// Controls the main menu screen.
+// Controls the join game screen.
 public class JoinGameScreen : IGameState {
 
 	// The currently entered room code.
@@ -9,7 +9,7 @@ public class JoinGameScreen : IGameState {
 	// Called when the join game button is clicked.
 	public void OnClickJoinGameButton () {
 		Debug.LogWarning ("Attempting to join room " + RoomCode + ".");
-		BeginJoinGame (RoomCode);
+		BeginJoinGame (RoomCode.ToUpper ());
 	}
 
 	// Called when the server responds to a request to join a game.

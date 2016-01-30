@@ -51,7 +51,7 @@ public class IGameState : MonoBehaviour {
 	/// </summary>
 	public virtual void OnInitializeState () {
 		hideableElements = new Dictionary<string, HideableInterfaceElement> ();
-		GuiCanvas = GetComponent<Canvas> ();
+		GuiCanvas = transform.Find ("GUI Canvas").GetComponent<Canvas> ();
 
 		// Find and initialize children game states.
 		stateChildren = new Dictionary<string, IGameStateChild> ();

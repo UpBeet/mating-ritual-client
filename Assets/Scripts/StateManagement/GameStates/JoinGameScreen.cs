@@ -8,6 +8,10 @@ public class JoinGameScreen : IGameState {
 
 	// Called when the join game button is clicked.
 	public void OnClickJoinGameButton () {
-		Debug.LogWarning ("Join game not hooked to server. Moving to test this functionality client-side.");
+		Debug.LogWarning ("Attempting to join room " + RoomCode + ".");
+	}
+
+	// Called when the server responds to a request to join a game.
+	private void BeginJoinGame (string roomkey) {
 	}
 }

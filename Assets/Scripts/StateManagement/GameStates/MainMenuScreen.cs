@@ -6,6 +6,7 @@ public class MainMenuScreen : IGameState {
 	// Called when the host game button is clicked.
 	public void OnClickHostGameButton () {
 		Debug.LogWarning ("Host game not hooked to server. Moving to test this functionality client-side.");
+		BeginHostingGame ("ABCD");
 	}
 
 	// Called when the join game button is clicked.
@@ -20,6 +21,7 @@ public class MainMenuScreen : IGameState {
 
 	// Called when the server responds to a request to host the game.
 	private void BeginHostingGame (string roomkey) {
-		Debug.LogWarning ("Begin hosting game with room key " + roomkey + ".");
+		DataCache.RoomKey = roomkey;
+		PushState ("Lobby");
 	}
 }

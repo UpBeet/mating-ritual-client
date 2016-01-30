@@ -28,9 +28,14 @@ public class HandleController : MonoBehaviour {
 
 	// Sets whether or not this handle is visible.
 	public void SetVisible (bool visible) {
+
+		// Show/hide handles.
 		for (int i = 0; i < hideables.Length; i++) {
 			hideables [i].SetShown (visible);
 		}
+
+		// Enable/disable collider.
+		GetComponent<Collider2D> ().enabled = visible;
 	}
 
 	// Fires when this handle begins dragging.

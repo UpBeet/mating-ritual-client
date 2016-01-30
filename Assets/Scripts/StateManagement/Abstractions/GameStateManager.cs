@@ -183,6 +183,11 @@ public class GameStateManager : MonoBehaviour {
 	/// <param name="id">Identifier.</param>
 	private IGameState DisplayNewGameScreen (string id) {
 
+		// Exit old screen.
+		if (currentScreen != null) {
+			currentScreen.OnExitState ();
+		}
+
 		// Destroy previous screen.
 		gameObject.DestroyAllChildren();
 		

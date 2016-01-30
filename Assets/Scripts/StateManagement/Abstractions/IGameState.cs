@@ -30,11 +30,6 @@ public class IGameState : MonoBehaviour {
 	private Dictionary<string, IGameStateChild> stateChildren;
 
 	/// <summary>
-	/// The amount of time spent waiting.
-	/// </summary>
-	private float waitingTime = 0;
-
-	/// <summary>
 	/// The GUI canvas used to draw the user interface for this screen.
 	/// </summary>
 	public Canvas GuiCanvas { get; protected set; }

@@ -134,7 +134,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
+  m_BackGroundColor: {r: 0.9882353, g: 0.63529414, b: 0.827451, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   - {fileID: 11421782, guid: a8c30580260614ae49ec53d640e501ee, type: 2}
   - {fileID: 11479844, guid: 41bd96c86f349409384cb2b3ec137854, type: 2}
   - {fileID: 11450638, guid: dd7f901c78c4043b4b69182ac5f2f250, type: 2}
-  initialGameStateId: Prompt
+  initialGameStateId: Posing
 --- !u!4 &1569157502
 Transform:
   m_ObjectHideFlags: 0

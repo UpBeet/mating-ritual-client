@@ -262,7 +262,8 @@ MonoBehaviour:
   gameStateList:
   - {fileID: 11403384, guid: 4a541e150514f43b090e49ba208649ce, type: 2}
   - {fileID: 11417656, guid: 495ed70ffdf0e4a53ac66f11d8d7897d, type: 2}
-  initialGameStateId: Posing
+  - {fileID: 11421782, guid: a8c30580260614ae49ec53d640e501ee, type: 2}
+  initialGameStateId: Main Menu
 --- !u!4 &1569157502
 Transform:
   m_ObjectHideFlags: 0

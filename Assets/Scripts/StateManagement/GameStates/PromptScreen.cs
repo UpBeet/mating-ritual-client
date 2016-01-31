@@ -19,5 +19,7 @@ public class PromptScreen : IGameState {
 	// Called when the submit button is clicked.
 	public void OnClickSubmitButton () {
 		Debug.LogWarning ("Sending response: " + prompt + " " + Response + ".");
-	}
+        BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
+        client.SendBirbMessage(BirbClient.BirbMessageCode.SEND_PROMPT, prompt, BirbClient.EmptyCallback);
+    }
 }

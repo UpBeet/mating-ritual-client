@@ -35,8 +35,9 @@ public class LobbyScreen : IGameState {
 
 	// Called when the start button is pressed.
 	public void OnPressStartButton () {
-		Debug.LogWarning ("Start game not implemented server-side. Initalizing client-side testing.");
-		GameStarted (3);
+        BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
+        client.SendBirbMessage(BirbClient.BirbMessageCode.BEGIN, DataCache.RoomKey, GameStarted);
+        //Debug.LogWarning ("Start game not implemented server-side. Initalizing client-side testing.");
 	}
 
 	// Sets whether or not the host controls are shown.
@@ -44,6 +45,11 @@ public class LobbyScreen : IGameState {
 		transform.Find ("GUI Canvas/Content/Waiting For Host Text").gameObject.SetActive (!isHost);
 		transform.Find ("GUI Canvas/Content/Start Game Panel").gameObject.SetActive (isHost);
 	}
+
+    private void GameStarted(params object[] parameters)
+    {
+        GameStarted((int)parameters[0]);
+    }
 
 	// Call this when the game is started from the server by the host.
 	private void GameStarted (int judgeIndex) {

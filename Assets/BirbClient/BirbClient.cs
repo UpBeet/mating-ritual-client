@@ -50,7 +50,7 @@ public class BirbClient : MonoBehaviour {
     {
         gameStateManager = GetComponent<GameStateManager>();
         Uri server = new Uri("ws://birb.herokuapp.com");
-        Uri localhost = new Uri("ws://localhost:5000");
+        Uri localhost = new Uri("ws://localhost:5001");
         socket = new WebSocket(localhost);
         yield return StartCoroutine(socket.Connect());
         int i = 0;
@@ -159,7 +159,7 @@ public class BirbClient : MonoBehaviour {
                 DataCache.PlayerIndex = int.Parse(serverMessage.data);
                 if(currentCallback != null)
                 {
-                    currentCallback.Invoke(DataCache.RoomKey);
+                    currentCallback.Invoke(DataCache.PlayerIndex);
                 }
                 break;
             case (BirbMessageCode.BEGIN):
@@ -192,7 +192,7 @@ public class BirbClient : MonoBehaviour {
         }
     }
 
-    private void EmptyCallback(params object[] parameters)
+    public static void EmptyCallback(params object[] parameters)
     { }
 
     #endregion

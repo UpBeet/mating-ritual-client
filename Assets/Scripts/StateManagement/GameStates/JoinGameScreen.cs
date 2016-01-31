@@ -24,12 +24,13 @@ public class JoinGameScreen : IGameState {
 
     private void BeginJoinGame(params object[] parameters)
     {
-        if((int)parameters[0] > -1)
+        if(int.Parse(parameters[0].ToString()) > -1)
         {
-            BeginJoinGame((int)parameters[0]);
+            BeginJoinGame(int.Parse(parameters[0].ToString()));
         }
         else
         {
+            Debug.LogError("Invalid room key.");
             // TODO: Display message indicating that the room doesn't exist
         }
     }

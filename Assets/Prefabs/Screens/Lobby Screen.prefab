@@ -601,16 +601,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 95505de79cec94d83b843fa638415dc6, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: XXXX
+  m_Text: XXXXX
 --- !u!114 &11459412
 MonoBehaviour:
   m_ObjectHideFlags: 1

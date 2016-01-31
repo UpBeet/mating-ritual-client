@@ -11,31 +11,9 @@ public class BirbClient : MonoBehaviour {
     /// An enumeration of all of the message codes that can be sent
     /// to, or received from, the birb server.
     /// </summary>
-    public enum BirbMessageCode { CONNECT, CREATE_ROOM, JOIN, PLAYER_JOINED,
+    public enum BirbMessageCode { CONNECT, CREATE_ROOM, JOIN_ROOM, JOINED_ROOM,
         BEGIN, GAME_STATE, SEND_PROMPT, GET_PROMPT, SEND_DANCE, DANCE_RECEVIED,
         PICK_WINNER, SEND_DANCES, ROUND_WINNER, GAME_WINNER, ROOM_KEY, INVALID_CODE };
-
-    /// <summary>
-    /// A collection of strings corresponding to birb message codes.
-    /// </summary>
-    public Dictionary<int, string> MessageStrings = new Dictionary<int, string>() {
-            { (int)BirbMessageCode.CONNECT, "CONNECT" },
-            { (int)BirbMessageCode.CREATE_ROOM, "CREATE_ROOM" },
-            { (int)BirbMessageCode.JOIN, "JOIN" },
-            { (int)BirbMessageCode.ROOM_KEY, "ROOM_KEY" },
-            { (int)BirbMessageCode.PLAYER_JOINED, "PLAYER_JOINED" },
-            { (int)BirbMessageCode.BEGIN, "BEGIN" },
-            { (int)BirbMessageCode.GAME_STATE, "GAME_STATE" },
-            { (int)BirbMessageCode.SEND_PROMPT, "SEND_PROMPT" },
-            { (int)BirbMessageCode.GET_PROMPT, "GET_PROMPT" },
-            { (int)BirbMessageCode.SEND_DANCE, "SEND_DANCE" },
-            { (int)BirbMessageCode.DANCE_RECEVIED, "DANCE_RECEIVED" },
-            { (int)BirbMessageCode.PICK_WINNER, "PICK_WINNER" },
-            { (int)BirbMessageCode.SEND_DANCES, "SEND_DANCES" },
-            { (int)BirbMessageCode.ROUND_WINNER, "ROUND_WINNER" },
-            { (int)BirbMessageCode.GAME_WINNER, "GAME_WINNER" },
-            { (int)BirbMessageCode.INVALID_CODE, "INVALID_CODE" },
-    };
 
     #endregion
 
@@ -95,7 +73,16 @@ public class BirbClient : MonoBehaviour {
     /// <param name="data">The data to send through.</param>
     public void SendBirbMessage(BirbMessageCode code, object data)
     {
-        string fullMessage = "{\"action\": \"" + MessageStrings[(int)code] + "\", \"data\": " + JsonUtility.ToJson(data) + "}";
+        string dataString = "";
+        if (data is string && data.ToString() != String.Empty)
+        {
+            dataString = "\"" + data.ToString() + "\"";
+        }
+        else
+        {
+            dataString = JsonUtility.ToJson(data);
+        }
+        string fullMessage = "{\"action\": \"" + code.ToString() + "\", \"data\": " + dataString + ", \"roomKey\": " + dataString + "}";
 
         // Debugging
         Debug.Log("Sending birb message: " + fullMessage);
@@ -121,22 +108,34 @@ public class BirbClient : MonoBehaviour {
             return;
         }
 
+        // Debugging
+        debug("Got action: " + serverMessage.action);
+        debug("Got data: " + serverMessage.data);
+
         // Parse out the message code
         BirbMessageCode messageCode = BirbMessageCode.INVALID_CODE;
-        foreach (BirbMessageCode code in MessageStrings.Keys)
-            if (MessageStrings[(int)code] == serverMessage.Action)
+        for(int i = 0; i < Enum.GetNames(typeof(BirbMessageCode)).Length; i++)
+        {
+            BirbMessageCode code = (BirbMessageCode)i;
+            if (serverMessage.action == code.ToString())
                 messageCode = code;
+        }
+
+        // Debugging
+        debug("Got message code: " + messageCode.ToString());
 
         switch (messageCode)
         {
             case (BirbMessageCode.CONNECT):
-                Debug.Log("Received " + MessageStrings[(int)messageCode] + " message");
+                Debug.Log("Received " + messageCode.ToString() + " message");
                 break;
             case (BirbMessageCode.ROOM_KEY):
-                Debug.Log("Received " + MessageStrings[(int)messageCode] + " message with key " + serverMessage.Data);
+                Debug.Log("Received " + messageCode.ToString() + " message with key " + serverMessage.data);
+                // Write the JOIN, ROOM_KEY
+                SendBirbMessage(BirbMessageCode.JOIN_ROOM, serverMessage.data);
                 break;
-            case (BirbMessageCode.PLAYER_JOINED):
-                Debug.Log("Received " + MessageStrings[(int)messageCode] + " message with userID " + serverMessage.Data);
+            case (BirbMessageCode.JOINED_ROOM):
+                Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
                 break;
             default:
                 break;
@@ -160,6 +159,10 @@ public class BirbClient : MonoBehaviour {
         SendBirbMessage(BirbMessageCode.CREATE_ROOM, "");
     }
 
-    #endregion
+    private void debug(string message)
+    {
+        Debug.Log(message);
+    }
 
+    #endregion
 }

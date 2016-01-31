@@ -7,11 +7,12 @@ using UnityEngine;
 [Serializable]
 class ServerMessage
 {
-    public string Action;
-    public string Data;
+    public string action;
+    public string data;
 
     public static ServerMessage CreateFromJSON(string jsonString)
     {
-        return JsonUtility.FromJson<ServerMessage>(jsonString);
+        ServerMessage message = JsonUtility.FromJson<ServerMessage>(jsonString);
+        return message;
     }
 }

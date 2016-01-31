@@ -1,0 +1,258 @@
+fileFormatVersion: 2
+guid: 703275b835734407ab80bb59613199ee
+timeCreated: 1454207256
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Lammergeier_0
+    21300002: Lammergeier_1
+    21300004: Lammergeier_2
+    21300006: Lammergeier_3
+    21300008: Lammergeier_4
+    21300010: Lammergeier_5
+    21300012: Lammergeier_6
+    21300014: Lammergeier_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Lammergeier_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 478
+        width: 229
+        height: 199
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.07628275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 54.500015, y: 183.81973}
+        - {x: -13.499985, y: 183.81973}
+        - {x: -114.499985, y: 128.81973}
+        - {x: -114.499985, y: 114.81973}
+        - {x: -109.499985, y: 112.81973}
+        - {x: -104.499985, y: 92.81973}
+        - {x: -114.499985, y: 74.81973}
+        - {x: -114.499985, y: 33.819733}
+        - {x: -110.499985, y: 15.819733}
+        - {x: -62.499985, y: -12.180267}
+        - {x: -55.499985, y: -15.180267}
+        - {x: 108.500015, y: -15.180267}
+        - {x: 114.500015, y: -4.1802673}
+        - {x: 114.500015, y: 117.81973}
+        - {x: 86.500015, y: 174.81973}
+    - name: Lammergeier_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 456
+        width: 205
+        height: 208
+      alignment: 9
+      pivot: {x: 0.5316396, y: 0.93033016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.9861145, y: 14.491333}
+        - {x: -9.9861145, y: 10.491333}
+        - {x: -85.986115, y: -40.508667}
+        - {x: -108.986115, y: -68.50867}
+        - {x: -108.986115, y: -151.50867}
+        - {x: -67.986115, y: -168.50867}
+        - {x: -50.986115, y: -193.50867}
+        - {x: -2.9861145, y: -193.50867}
+        - {x: 96.013885, y: -134.50867}
+        - {x: 96.013885, y: -112.50867}
+        - {x: 12.0138855, y: 14.491333}
+    - name: Lammergeier_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 327
+        width: 129
+        height: 124
+      alignment: 9
+      pivot: {x: 0.4899441, y: 0.21753915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.79721, y: 97.02515}
+        - {x: -60.20279, y: 97.02515}
+        - {x: -63.20279, y: 95.02515}
+        - {x: -63.20279, y: -22.974854}
+        - {x: -39.20279, y: -26.974854}
+        - {x: 65.79721, y: -26.974854}
+        - {x: 65.79721, y: 61.025146}
+        - {x: 63.79721, y: 87.02515}
+    - name: Lammergeier_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 225
+        width: 188
+        height: 165
+      alignment: 9
+      pivot: {x: 0.15499277, y: 0.92454684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1.8613586, y: 12.449768}
+        - {x: -14.138641, y: 12.449768}
+        - {x: -22.138641, y: 5.449768}
+        - {x: -29.138641, y: -48.550232}
+        - {x: -29.138641, y: -144.55023}
+        - {x: -28.138641, y: -146.55023}
+        - {x: -21.138641, y: -152.55023}
+        - {x: 158.86136, y: -152.55023}
+        - {x: 158.86136, y: -30.550232}
+        - {x: 154.86136, y: -22.550232}
+    - name: Lammergeier_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 4
+        width: 299
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 112.5, y: -128}
+        - {x: 137.5, y: -102}
+        - {x: 146.5, y: -86}
+        - {x: 149.5, y: -56}
+        - {x: 149.5, y: 35}
+        - {x: 148.5, y: 44}
+        - {x: 131.5, y: 70}
+        - {x: 115.5, y: 96}
+        - {x: 90.5, y: 111}
+        - {x: 55.5, y: 145}
+        - {x: 31.5, y: 155}
+        - {x: -20.5, y: 155}
+        - {x: -32.5, y: 153}
+        - {x: -85.5, y: 121}
+        - {x: -92.5, y: 114}
+        - {x: -106.5, y: 91}
+        - {x: -116.5, y: 71}
+        - {x: -138.5, y: 21}
+        - {x: -140.5, y: -11}
+        - {x: -149.5, y: -28}
+        - {x: -149.5, y: -99}
+        - {x: -123.5, y: -132}
+        - {x: -112.5, y: -136}
+        - {x: -64.5, y: -154}
+        - {x: -62.5, y: -155}
+        - {x: -48.5, y: -155}
+        - {x: -35.5, y: -147}
+        - {x: 42.5, y: -147}
+        - {x: 83.5, y: -139}
+    - name: Lammergeier_5
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 157
+        width: 40
+        height: 51
+      alignment: 9
+      pivot: {x: 0.33971635, y: 0.79070956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7.5886536, y: 10.673813}
+        - {x: -13.588654, y: 1.6738129}
+        - {x: -13.588654, y: -26.326187}
+        - {x: -8.588654, y: -40.326187}
+        - {x: 26.411346, y: -40.326187}
+        - {x: 26.411346, y: -10.326187}
+        - {x: 24.411346, y: 6.673813}
+        - {x: 15.411346, y: 10.673813}
+    - name: Lammergeier_6
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 143
+        width: 73
+        height: 70
+      alignment: 9
+      pivot: {x: 0.3188577, y: 0.9064327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 49.72339, y: -38.450287}
+        - {x: 42.72339, y: -33.450287}
+        - {x: 24.723389, y: -29.450287}
+        - {x: 12.723389, y: 0.54971313}
+        - {x: 4.7233887, y: 6.549713}
+        - {x: -12.276611, y: 6.549713}
+        - {x: -20.276611, y: -14.450287}
+        - {x: -23.276611, y: -21.450287}
+        - {x: -23.276611, y: -44.450287}
+        - {x: -4.2766113, y: -63.450287}
+        - {x: 41.72339, y: -63.450287}
+        - {x: 42.72339, y: -60.450287}
+        - {x: 32.72339, y: -48.450287}
+        - {x: 49.72339, y: -45.450287}
+    - name: Lammergeier_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 13
+        width: 268
+        height: 117
+      alignment: 9
+      pivot: {x: 0.73175275, y: 0.8013875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70.10974, y: 23.237663}
+        - {x: -196.10974, y: -67.76234}
+        - {x: -196.10974, y: -84.76234}
+        - {x: -195.10974, y: -87.76234}
+        - {x: -188.10974, y: -93.76234}
+        - {x: -2.1097412, y: -93.76234}
+        - {x: 42.89026, y: -90.76234}
+        - {x: 71.89026, y: -31.762337}
+        - {x: 71.89026, y: -2.7623367}
+        - {x: -48.10974, y: 23.237663}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

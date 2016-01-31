@@ -17,12 +17,6 @@ public class LobbyScreen : IGameState {
 		});
 	}
 
-	// Sets whether or not the host controls are shown.
-	private void ShowHostControls (bool isHost) {
-		transform.Find ("GUI Canvas/Content/Waiting For Host Text").gameObject.SetActive (!isHost);
-		transform.Find ("GUI Canvas/Content/Start Game Panel").gameObject.SetActive (isHost);
-	}
-
 	// Set the birds currently participating in this game.
 	public void SetParticipatingBirds (int[] birdIndices) {
 		RectTransform container = transform.Find ("GUI Canvas/Content/Joined Characters Panel").GetComponent<RectTransform> ();
@@ -37,5 +31,24 @@ public class LobbyScreen : IGameState {
 				birdIcon.localScale = Vector3.one;
 			}
 		}
+	}
+
+	// Called when the start button is pressed.
+	public void OnPressStartButton () {
+		Debug.LogWarning ("Start game not implemented server-side. Initalizing client-side testing.");
+		GameStarted (3);
+	}
+
+	// Sets whether or not the host controls are shown.
+	private void ShowHostControls (bool isHost) {
+		transform.Find ("GUI Canvas/Content/Waiting For Host Text").gameObject.SetActive (!isHost);
+		transform.Find ("GUI Canvas/Content/Start Game Panel").gameObject.SetActive (isHost);
+	}
+
+	// Call this when the game is started from the server by the host.
+	private void GameStarted (int judgeIndex) {
+		DataCache.JudgeIndex = judgeIndex;
+		PopState ();
+		PushState (DataCache.PlayerIsJudge () ? "Prompt" : "Scores");
 	}
 }

@@ -20,6 +20,17 @@ public class PromptScreen : IGameState {
 	public void OnClickSubmitButton () {
 		Debug.LogWarning ("Sending response: " + prompt + " " + Response + ".");
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
-        client.SendBirbMessage(BirbClient.BirbMessageCode.SEND_PROMPT, prompt, BirbClient.EmptyCallback);
+        client.SendBirbMessage(BirbClient.BirbMessageCode.SEND_PROMPT, prompt + " " + transform.Find("GUI Canvas/Response Input Input/Text").GetComponent<Text>().text, DataCache.RoomKey, BeginWaitingForPoses);
+    }
+
+    private void BeginWaitingForPoses(params object[] parameters)
+    {
+        BeginWaitingForPoses();
+    }
+
+    private void BeginWaitingForPoses()
+    {
+        transform.Find("GUI Canvas/Submit Button").GetComponent<Button>().interactable = false;
+        transform.Find("GUI Canvas/Prompt").GetComponent<Text>().text = "Prompt submitted! Please wait for the contestants to pose some birbs...";
     }
 }

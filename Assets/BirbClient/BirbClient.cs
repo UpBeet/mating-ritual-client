@@ -50,7 +50,7 @@ public class BirbClient : MonoBehaviour {
     {
         gameStateManager = GetComponent<GameStateManager>();
         Uri server = new Uri("ws://birb.herokuapp.com");
-        Uri localhost = new Uri("ws://localhost:5001");
+        Uri localhost = new Uri("ws://localhost:5000");
         socket = new WebSocket(localhost);
         yield return StartCoroutine(socket.Connect());
         int i = 0;
@@ -97,6 +97,26 @@ public class BirbClient : MonoBehaviour {
             dataString = JsonUtility.ToJson(data);
         }
         string fullMessage = "{\"action\": \"" + code.ToString() + "\", \"data\": " + dataString + ", \"roomKey\": " + dataString + "}";
+
+        // Debugging
+        Debug.Log("Sending birb message: " + fullMessage);
+        currentCallback = callback;
+
+        socket.SendString(fullMessage);
+    }
+
+    public void SendBirbMessage(BirbMessageCode code, object data, string roomKey, Callback callback)
+    {
+        string dataString = "";
+        if (data is string && data.ToString() != String.Empty)
+        {
+            dataString = "\"" + data.ToString() + "\"";
+        }
+        else
+        {
+            dataString = JsonUtility.ToJson(data);
+        }
+        string fullMessage = "{\"action\": \"" + code.ToString() + "\", \"data\": " + dataString + ", \"roomKey\": \"" + roomKey + "\"}";
 
         // Debugging
         Debug.Log("Sending birb message: " + fullMessage);
@@ -176,7 +196,10 @@ public class BirbClient : MonoBehaviour {
                 break;
             case (BirbMessageCode.GET_PROMPT):
                 Debug.Log("Received " + messageCode.ToString() + " message with prompt " + serverMessage.data);
-                // TODO : Switch to the gameplay posing screen
+                if(currentCallback != null)
+                {
+                    currentCallback.Invoke();
+                }
                 break;
             case (BirbMessageCode.DANCE_RECEVIED):
                 Debug.Log("Received " + messageCode.ToString() + " message with boolean " + serverMessage.data);

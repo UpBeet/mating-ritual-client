@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 7039802a027aa427192d357611f34358
-timeCreated: 1454206096
+timeCreated: 1454206628
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Pyrrhuloxia_0
+    21300002: Pyrrhuloxia_1
+    21300004: Pyrrhuloxia_2
+    21300006: Pyrrhuloxia_3
+    21300008: Pyrrhuloxia_4
+    21300010: Pyrrhuloxia_5
+    21300012: Pyrrhuloxia_6
+    21300014: Pyrrhuloxia_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,7 +57,179 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Pyrrhuloxia_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 444
+        width: 213
+        height: 232
+      alignment: 9
+      pivot: {x: 0.48781946, y: 0.04149746}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 39.09445, y: 188.37259}
+        - {x: -94.90555, y: 222.37259}
+        - {x: -103.90555, y: 222.37259}
+        - {x: -103.90555, y: 213.37259}
+        - {x: -77.90555, y: 161.37259}
+        - {x: -101.90555, y: 126.37259}
+        - {x: -103.90555, y: 86.37259}
+        - {x: -103.90555, y: 55.37259}
+        - {x: -84.90555, y: 24.37259}
+        - {x: -35.90555, y: -9.627411}
+        - {x: 53.09445, y: -9.627411}
+        - {x: 67.09445, y: -6.627411}
+        - {x: 109.09445, y: 52.37259}
+        - {x: 109.09445, y: 128.37259}
+        - {x: 76.09445, y: 173.37259}
+    - name: Pyrrhuloxia_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 466
+        width: 206
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5314863, y: 0.93447804}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.513824, y: 13.694092}
+        - {x: -10.486176, y: 13.694092}
+        - {x: -60.486176, y: -22.305908}
+        - {x: -109.486176, y: -64.30591}
+        - {x: -109.486176, y: -162.30591}
+        - {x: -69.486176, y: -192.30591}
+        - {x: -61.486176, y: -195.30591}
+        - {x: 2.5138245, y: -195.30591}
+        - {x: 96.513824, y: -133.30591}
+        - {x: 96.513824, y: -113.30591}
+        - {x: 20.513824, y: 8.694092}
+    - name: Pyrrhuloxia_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 315
+        width: 122
+        height: 115
+      alignment: 9
+      pivot: {x: 0.47873387, y: 0.17287332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58.405533, y: 95.11957}
+        - {x: -58.405533, y: -17.880432}
+        - {x: -20.405533, y: -19.880432}
+        - {x: 49.594467, y: -19.880432}
+        - {x: 63.594467, y: -9.880432}
+        - {x: 63.594467, y: 95.11957}
+    - name: Pyrrhuloxia_3
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 266
+        width: 190
+        height: 165
+      alignment: 9
+      pivot: {x: 0.14496925, y: 0.9324091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.455841, y: 11.152496}
+        - {x: -16.544159, y: 11.152496}
+        - {x: -27.544159, y: -53.847504}
+        - {x: -27.544159, y: -151.8475}
+        - {x: -18.544159, y: -153.8475}
+        - {x: 103.45584, y: -153.8475}
+        - {x: 131.45584, y: -141.8475}
+        - {x: 162.45584, y: -95.8475}
+        - {x: 162.45584, y: -44.847504}
+        - {x: 159.45584, y: -20.847504}
+    - name: Pyrrhuloxia_4
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2
+        width: 286
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: -88.5}
+        - {x: 143, y: -16.5}
+        - {x: 137, y: 12.5}
+        - {x: 128, y: 35.5}
+        - {x: 109, y: 76.5}
+        - {x: 92, y: 99.5}
+        - {x: 61, y: 130.5}
+        - {x: 48, y: 139.5}
+        - {x: 26, y: 149.5}
+        - {x: -28, y: 149.5}
+        - {x: -31, y: 148.5}
+        - {x: -67, y: 127.5}
+        - {x: -103, y: 85.5}
+        - {x: -111, y: 71.5}
+        - {x: -129, y: 34.5}
+        - {x: -137, y: 11.5}
+        - {x: -143, y: -16.5}
+        - {x: -143, y: -86.5}
+        - {x: -133, y: -108.5}
+        - {x: -120, y: -123.5}
+        - {x: -94, y: -139.5}
+        - {x: -79, y: -144.5}
+        - {x: -51, y: -149.5}
+        - {x: 49, y: -149.5}
+        - {x: 67, y: -147.5}
+        - {x: 97, y: -140.5}
+        - {x: 130, y: -115.5}
+    - name: Pyrrhuloxia_5
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 169
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3558632, y: 0.81639695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Pyrrhuloxia_6
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 166
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.23390159, y: 0.90538377}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.122162, y: 4.54158}
+        - {x: -9.122162, y: -36.45842}
+        - {x: -3.1221619, y: -43.45842}
+        - {x: 29.877838, y: -43.45842}
+        - {x: 29.877838, y: -13.45842}
+        - {x: 17.877838, y: 4.54158}
+    - name: Pyrrhuloxia_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 13
+        width: 236
+        height: 104
+      alignment: 9
+      pivot: {x: 0.720091, y: 0.8575515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.9414673, y: 14.814644}
+        - {x: -49.941467, y: 14.814644}
+        - {x: -55.941467, y: 12.814644}
+        - {x: -169.94147, y: -78.185356}
+        - {x: -169.94147, y: -89.185356}
+        - {x: -137.94147, y: -89.185356}
+        - {x: 16.058533, y: -34.185356}
+        - {x: 66.05853, y: -9.185356}
+        - {x: 66.05853, y: -2.1853561}
     outline: []
   spritePackingTag: 
   userData: 

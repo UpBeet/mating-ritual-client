@@ -50,8 +50,8 @@ public class BirbClient : MonoBehaviour {
     {
         gameStateManager = GetComponent<GameStateManager>();
         Uri server = new Uri("ws://birb.herokuapp.com");
-        Uri braxton = new Uri("ws://72.230.134.30:5000");
-        socket = new WebSocket(server);
+        Uri localhost = new Uri("ws://localhost:5000");
+        socket = new WebSocket(localhost);
         yield return StartCoroutine(socket.Connect());
         int i = 0;
 
@@ -157,6 +157,10 @@ public class BirbClient : MonoBehaviour {
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
                 DataCache.PlayerIndex = int.Parse(serverMessage.data);
+                if(currentCallback != null)
+                {
+                    currentCallback.Invoke(DataCache.RoomKey);
+                }
                 break;
             case (BirbMessageCode.BEGIN):
                 Debug.Log("Received " + messageCode.ToString() + " message with judge ID " + serverMessage.data);

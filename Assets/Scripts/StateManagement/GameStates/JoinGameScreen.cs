@@ -9,21 +9,34 @@ public class JoinGameScreen : IGameState {
 
 	// Called when the join game button is clicked.
 	public void OnClickJoinGameButton () {
-		Debug.LogWarning ("Attempting to join room " + RoomCode + ".");
+        BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
+        //Debug.LogWarning ("Attempting to join room " + RoomCode + ".");
 
-		// Check for input.
-		if (string.IsNullOrEmpty (RoomCode)) {
+        // Check for input.
+        if (string.IsNullOrEmpty (RoomCode)) {
 			GetComponentInChildren<InputField> ().Select ();
 			return;
 		}
 
-		// Test join game.
-		BeginJoinGame (RoomCode.ToUpper ());
-	}
+        DataCache.RoomKey = RoomCode;
+        client.SendBirbMessage(BirbClient.BirbMessageCode.JOIN_ROOM, DataCache.RoomKey, BeginJoinGame);
+    }
+
+    private void BeginJoinGame(params object[] parameters)
+    {
+        if((int)parameters[0] > -1)
+        {
+            BeginJoinGame((int)parameters[0]);
+        }
+        else
+        {
+            // TODO: Display message indicating that the room doesn't exist
+        }
+    }
 
 	// Called when the server responds to a request to join a game.
-	private void BeginJoinGame (string roomkey) {
-		DataCache.RoomKey = roomkey;
+	private void BeginJoinGame (int userId) {
+        DataCache.PlayerIndex = userId;
 		DataCache.IsHost = false;
 		PushState ("Lobby");
 	}

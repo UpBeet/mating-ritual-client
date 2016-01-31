@@ -307,6 +307,7 @@ MonoBehaviour:
   - {fileID: 11450638, guid: dd7f901c78c4043b4b69182ac5f2f250, type: 2}
   - {fileID: 11486986, guid: a9df39b04d5d4497090d723f9730124b, type: 2}
   - {fileID: 11429846, guid: 0aaf1712812fa42eba865b5f2cf2739f, type: 2}
+  - {fileID: 11441890, guid: 699944d236bdc41c1b23cbbe6c9b2f56, type: 2}
   initialGameStateId: Main Menu
 --- !u!4 &1569157502
 Transform:

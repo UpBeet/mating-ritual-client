@@ -15,6 +15,7 @@ public class LobbyScreen : IGameState {
 		SetParticipatingBirds (new []{
 			0, 3, 4, 7
 		});
+
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
         client.currentCallback = GameStarted;
 

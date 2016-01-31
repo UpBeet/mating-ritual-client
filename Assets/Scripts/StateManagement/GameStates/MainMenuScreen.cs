@@ -9,16 +9,6 @@ public class MainMenuScreen : IGameState {
 		BeginHostingGame ("ABCD");
 	}
 
-	// Called when the join game button is clicked.
-	public void OnClickJoinGameButton () {
-		Debug.LogWarning ("Join game not implemented yet.");
-	}
-
-	// Called when the rules button is clicked.
-	public void OnClickRulesButton () {
-		Debug.LogWarning ("Rules not implemented yet.");
-	}
-
 	// Called when the server responds to a request to host the game.
 	private void BeginHostingGame (string roomkey) {
 		DataCache.RoomKey = roomkey;

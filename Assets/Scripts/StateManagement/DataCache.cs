@@ -15,11 +15,23 @@ public static class DataCache {
 	// Player index of the current judge.
 	public static int JudgeIndex { get; set; }
 
+	// Current scores.
+	public static int[] Scores { get; set; }
+
 	// Initialize the data cache.
 	static DataCache () {
 		RoomKey = string.Empty;
 		IsHost = false;
 		PlayerIndex = 0;
 		JudgeIndex = -1;
+		Scores = new int[8];
+		for (int i = 0; i < Scores.Length; i++) {
+			Scores [i] = -1;
+		}
+	}
+
+	// Checks if the player is the current judge.
+	public static bool PlayerIsJudge () {
+		return PlayerIndex == JudgeIndex;
 	}
 }

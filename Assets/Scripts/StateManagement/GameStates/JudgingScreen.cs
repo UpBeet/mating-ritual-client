@@ -55,6 +55,11 @@ public class JudgingScreen : IGameState {
 		Destroy (Camera.main.GetComponent<CameraDrag> ());
 	}
 
+	// Sets the prompt text.
+	public void SetPrompt (string prompt) {
+		transform.Find ("Front Canvas/Top/Prompt").GetComponent<Text> ().text = prompt;
+	}
+
 	// Load the rigs and their animations on to this screen.
 	public void LoadRigs (int[] characterIndices, HandlePositionPairSet[][] animations) {
 		Transform container = transform.Find ("Stage");

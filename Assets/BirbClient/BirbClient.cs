@@ -52,6 +52,7 @@ public class BirbClient : MonoBehaviour {
         Uri server = new Uri("ws://birb.herokuapp.com");
         Uri localhost = new Uri("ws://localhost:5000");
         socket = new WebSocket(server);
+        callbacks = new Dictionary<BirbMessageCode, Callback>();
         yield return StartCoroutine(socket.Connect());
         int i = 0;
 

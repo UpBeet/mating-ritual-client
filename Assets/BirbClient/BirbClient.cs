@@ -36,7 +36,7 @@ public class BirbClient : MonoBehaviour {
     /// <param name="parameters"></param>
     public delegate void Callback(params object[] parameters);
 
-    Callback currentCallback;
+    public Callback currentCallback;
 
     #endregion
 
@@ -51,7 +51,7 @@ public class BirbClient : MonoBehaviour {
         gameStateManager = GetComponent<GameStateManager>();
         Uri server = new Uri("ws://birb.herokuapp.com");
         Uri localhost = new Uri("ws://localhost:5000");
-        socket = new WebSocket(localhost);
+        socket = new WebSocket(server);
         yield return StartCoroutine(socket.Connect());
         int i = 0;
 
@@ -171,23 +171,27 @@ public class BirbClient : MonoBehaviour {
                 if(currentCallback != null)
                 {
                     currentCallback.Invoke(DataCache.RoomKey);
+                    currentCallback = null;
                 }
                 SendBirbMessage(BirbMessageCode.JOIN_ROOM, serverMessage.data, EmptyCallback);
                 break;
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
-                DataCache.PlayerIndex = int.Parse(serverMessage.data);
+                if(DataCache.PlayerIndex == -1)
+                    DataCache.PlayerIndex = int.Parse(serverMessage.data);
                 if(currentCallback != null)
                 {
                     currentCallback.Invoke(DataCache.PlayerIndex);
+                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.BEGIN):
                 Debug.Log("Received " + messageCode.ToString() + " message with judge ID " + serverMessage.data);
-                if(currentCallback != null)
+                if (currentCallback != null)
                 {
                     DataCache.JudgeIndex = int.Parse(serverMessage.data);
                     currentCallback.Invoke(DataCache.JudgeIndex);
+                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.GAME_STATE):
@@ -199,6 +203,7 @@ public class BirbClient : MonoBehaviour {
                 if(currentCallback != null)
                 {
                     currentCallback.Invoke();
+                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.DANCE_RECEVIED):

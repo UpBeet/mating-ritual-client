@@ -22,7 +22,7 @@ public static class DataCache {
 	static DataCache () {
 		RoomKey = string.Empty;
 		IsHost = false;
-		PlayerIndex = 0;
+		PlayerIndex = -1;
 		JudgeIndex = -1;
 		Scores = new int[8];
 		for (int i = 0; i < Scores.Length; i++) {

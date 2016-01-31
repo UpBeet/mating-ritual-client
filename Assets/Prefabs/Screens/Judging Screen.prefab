@@ -87,9 +87,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Judging
-  characterSpacing: 5
+  characterSpacing: 10
   selectMateButtonPrefab: {fileID: 11492704, guid: fe16167a12c714672ad6897571b404c5,
     type: 2}
+  winnerAnimation: {fileID: 196238, guid: af99cfbd5ea0941a8825ac1f7eae07b9, type: 2}
 --- !u!114 &11444010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,6 +175,18 @@ Prefab:
       value: 
       objectReference: {fileID: 11492704, guid: fe16167a12c714672ad6897571b404c5,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: cameraMoveSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: characterSpacing
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: winnerAnimation
+      value: 
+      objectReference: {fileID: 196238, guid: af99cfbd5ea0941a8825ac1f7eae07b9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192294}

@@ -109,6 +109,11 @@ public class PosingController : MonoBehaviour {
 		// Can't see handles while playing.
 		SetAllHandlesVisible (false);
 
+		// Check if there are actually pairs to work with.
+		if (pairs == null || pairs.Length <= 0) {
+			return;
+		}
+
 		// Copy pairs and start playing.
 		playingKeyframes = pairs;
 		playing = true;

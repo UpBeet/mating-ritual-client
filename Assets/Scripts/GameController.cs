@@ -8,6 +8,7 @@ public class Bird {
 	public string name;
 	public Sprite headSprite;
 	public PosingController rig;
+	public AudioClip sound;
 }
 
 // Manages the GameController component.

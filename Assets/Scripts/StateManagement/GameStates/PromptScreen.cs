@@ -30,7 +30,8 @@ public class PromptScreen : IGameState {
 
     private void BeginWaitingForPoses()
     {
-        transform.Find("GUI Canvas/Submit Button").GetComponent<Button>().interactable = false;
-        transform.Find("GUI Canvas/Prompt").GetComponent<Text>().text = "Prompt submitted! Please wait for the contestants to pose some birbs...";
+		transform.Find("GUI Canvas/Submit Button").GetComponent<Button>().interactable = false;
+		transform.Find ("GUI Canvas/Response Input").GetComponent<InputField> ().interactable = false;
+        transform.Find("GUI Canvas/Prompt").GetComponent<Text>().text = "Waiting for contestants to pose.";
     }
 }

@@ -17,6 +17,13 @@ public class LobbyScreen : IGameState {
 		});
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
         client.currentCallback = GameStarted;
+
+        // Show my bird.
+        Bird bird = GameController.GetBird(DataCache.PlayerIndex);
+        Debug.LogWarning(bird);
+        transform.Find("GUI Canvas/Content/Character Image").GetComponent<Image>().sprite = bird.headSprite;
+        transform.Find("GUI Canvas/Content/Character Name").GetComponent<Text>().text = bird.name;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(bird.sound);
     }
 
 	// Set the birds currently participating in this game.
@@ -36,11 +43,10 @@ public class LobbyScreen : IGameState {
 	}
 
 	// Called when the start button is pressed.
-	public void OnPressStartButton () {
+	public void OnPressStartButton () { 
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
         client.SendBirbMessage(BirbClient.BirbMessageCode.BEGIN, DataCache.RoomKey, GameStarted);
-        //Debug.LogWarning ("Start game not implemented server-side. Initalizing client-side testing.");
-    }
+	}
 
 	// Sets whether or not the host controls are shown.
 	private void ShowHostControls (bool isHost) {

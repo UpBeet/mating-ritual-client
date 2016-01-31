@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11401694}
   - 114: {fileID: 11445988}
   m_Layer: 0
-  m_Name: Response Input Input
+  m_Name: Response Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: 413b7c593bec44cdb9a5b16d43338cd9, type: 3}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 7d8aa0537d46c4ea3957c0759599317a, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted

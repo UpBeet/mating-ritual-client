@@ -13,7 +13,8 @@ public class BirbClient : MonoBehaviour {
     /// </summary>
     public enum BirbMessageCode { CONNECT, CREATE_ROOM, JOIN_ROOM, JOINED_ROOM,
         BEGIN, GAME_STATE, SEND_PROMPT, GET_PROMPT, SEND_DANCE, DANCE_RECEVIED,
-        PICK_WINNER, SEND_DANCES, ROUND_WINNER, GAME_WINNER, ROOM_KEY, INVALID_CODE };
+        PICK_WINNER, SEND_DANCES, ROUND_WINNER, GAME_WINNER, ROOM_KEY, START_JUDGING,
+        INVALID_CODE };
 
     #endregion
 
@@ -28,6 +29,14 @@ public class BirbClient : MonoBehaviour {
     /// The game state manager.
     /// </summary>
     GameStateManager gameStateManager;
+
+    /// <summary>
+    /// A generic callback to use for reponses.
+    /// </summary>
+    /// <param name="parameters"></param>
+    public delegate void Callback(params object[] parameters);
+
+    Callback currentCallback;
 
     #endregion
 
@@ -47,7 +56,7 @@ public class BirbClient : MonoBehaviour {
         int i = 0;
 
         // Testing
-        RunUnitTests();
+        //RunUnitTests();
 
         while (true)
         {
@@ -76,7 +85,7 @@ public class BirbClient : MonoBehaviour {
     /// </summary>
     /// <param name="code">The code of the message to send through.</param>
     /// <param name="data">The data to send through.</param>
-    public void SendBirbMessage(BirbMessageCode code, object data)
+    public void SendBirbMessage(BirbMessageCode code, object data, Callback callback)
     {
         string dataString = "";
         if (data is string && data.ToString() != String.Empty)
@@ -91,6 +100,7 @@ public class BirbClient : MonoBehaviour {
 
         // Debugging
         Debug.Log("Sending birb message: " + fullMessage);
+        currentCallback = callback;
 
         socket.SendString(fullMessage);
     }
@@ -137,16 +147,49 @@ public class BirbClient : MonoBehaviour {
             case (BirbMessageCode.ROOM_KEY):
                 Debug.Log("Received " + messageCode.ToString() + " message with key " + serverMessage.data);
                 // Write the JOIN, ROOM_KEY
-                SendBirbMessage(BirbMessageCode.JOIN_ROOM, serverMessage.data);
+                DataCache.RoomKey = serverMessage.data;
+                if(currentCallback != null)
+                {
+                    currentCallback.Invoke(DataCache.RoomKey);
+                }
+                SendBirbMessage(BirbMessageCode.JOIN_ROOM, serverMessage.data, EmptyCallback);
                 break;
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
-                // TODO: Switch the game screen
+                DataCache.PlayerIndex = int.Parse(serverMessage.data);
+                break;
+            case (BirbMessageCode.BEGIN):
+                Debug.Log("Received " + messageCode.ToString() + " message with judge ID " + serverMessage.data);
+                if(currentCallback != null)
+                {
+                    DataCache.JudgeIndex = int.Parse(serverMessage.data);
+                    currentCallback.Invoke(DataCache.JudgeIndex);
+                }
+                break;
+            case (BirbMessageCode.GAME_STATE):
+                Debug.Log("Received " + messageCode.ToString() + " message with game state data " + serverMessage.data);
+                // TODO: Handle that game state somehow
+                break;
+            case (BirbMessageCode.GET_PROMPT):
+                Debug.Log("Received " + messageCode.ToString() + " message with prompt " + serverMessage.data);
+                // TODO : Switch to the gameplay posing screen
+                break;
+            case (BirbMessageCode.DANCE_RECEVIED):
+                Debug.Log("Received " + messageCode.ToString() + " message with boolean " + serverMessage.data);
+                // TODO : Display the acknowledgement
+                break;
+            case (BirbMessageCode.START_JUDGING):
+                Debug.Log("Received " + messageCode.ToString() + " message.");
+                // TODO : Move the judge to the judging screen and the others
+                // to the waiting screen
                 break;
             default:
                 break;
         }
     }
+
+    private void EmptyCallback(params object[] parameters)
+    { }
 
     #endregion
 
@@ -157,12 +200,21 @@ public class BirbClient : MonoBehaviour {
     /// </summary>
     private void RunUnitTests()
     {
-        CreateRoom();
+        CreateAndJoinRoom();
+        // Wait until we get a user ID back
+        //while(userData.UserId == -1L)
+        //{ }
+        //BeginGame();
     }
 
-    private void CreateRoom()
+    private void CreateAndJoinRoom()
     {
-        SendBirbMessage(BirbMessageCode.CREATE_ROOM, "");
+        SendBirbMessage(BirbMessageCode.CREATE_ROOM, "", EmptyCallback);
+    }
+
+    private void BeginGame()
+    {
+        SendBirbMessage(BirbMessageCode.BEGIN, DataCache.RoomKey, EmptyCallback);
     }
 
     private void debug(string message)

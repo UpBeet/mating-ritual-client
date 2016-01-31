@@ -291,3 +291,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2dc5a299dff04d2d83298aa62dbe7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birds:
+  - name: Keel-Billed Toucan
+    headSprite: {fileID: 21300000, guid: d8c25e368afb244199431dac96d7f08f, type: 3}
+    rig: {fileID: 11428158, guid: 065784ad7fb454a46a0e2c0103a5be44, type: 2}
+  - name: Piliated Woodpecker
+    headSprite: {fileID: 21300000, guid: 2ec2c358251a64c69bcff7b4a7f7be6b, type: 3}
+    rig: {fileID: 11428158, guid: efd106107511f462b94792b4b1bb4277, type: 2}
+  - name: Dodo Bird
+    headSprite: {fileID: 21300000, guid: d124584a33fbb42a7826b39af59d9012, type: 3}
+    rig: {fileID: 11428158, guid: c3a5b5303ca9942e7b3954596155119b, type: 2}
+  - name: Blue-Footed Booby
+    headSprite: {fileID: 21300000, guid: 4a98814587deb4fbeaa8f95a62b0510c, type: 3}
+    rig: {fileID: 11428158, guid: 53443f35178654d60ba6a60fbea6e52d, type: 2}
+  - name: Pyrrhuloxia
+    headSprite: {fileID: 21300000, guid: 7039802a027aa427192d357611f34358, type: 3}
+    rig: {fileID: 11428158, guid: 59dcb1cf233e94f3da8d6fed406a35b7, type: 2}
+  - name: Mallard Duck
+    headSprite: {fileID: 21300000, guid: c8ffe9ba1b314479e9da91839db7c8c4, type: 3}
+    rig: {fileID: 11428158, guid: 403c28b678e0843ddbfeab6f783c1e1e, type: 2}
+  - name: Zebra Finch
+    headSprite: {fileID: 21300000, guid: 74d51bb518b4d49a7b57c7e1c8631ca7, type: 3}
+    rig: {fileID: 11428158, guid: 7c25abe87a1544ce682ec6cc78a6eafe, type: 2}
+  - name: Lammergeier
+    headSprite: {fileID: 21300000, guid: 703275b835734407ab80bb59613199ee, type: 3}
+    rig: {fileID: 11428158, guid: 1ac7eccc297f740f98d09d55a9fad81e, type: 2}

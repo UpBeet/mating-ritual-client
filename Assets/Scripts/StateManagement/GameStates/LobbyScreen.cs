@@ -17,7 +17,7 @@ public class LobbyScreen : IGameState {
 		});
 
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
-        client.currentCallback = GameStarted;
+        client.callbacks[BirbClient.BirbMessageCode.BEGIN] = GameStarted;
 
         // Show my bird.
         Bird bird = GameController.GetBird(DataCache.PlayerIndex);

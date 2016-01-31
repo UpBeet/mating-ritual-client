@@ -36,7 +36,7 @@ public class BirbClient : MonoBehaviour {
     /// <param name="parameters"></param>
     public delegate void Callback(params object[] parameters);
 
-    public Callback currentCallback;
+    public Dictionary<BirbMessageCode, Callback> callbacks;
 
     #endregion
 
@@ -100,7 +100,7 @@ public class BirbClient : MonoBehaviour {
 
         // Debugging
         Debug.Log("Sending birb message: " + fullMessage);
-        currentCallback = callback;
+        callbacks[code] = callback;
 
         socket.SendString(fullMessage);
     }
@@ -120,7 +120,7 @@ public class BirbClient : MonoBehaviour {
 
         // Debugging
         Debug.Log("Sending birb message: " + fullMessage);
-        currentCallback = callback;
+        callbacks[code] = callback;
 
         socket.SendString(fullMessage);
     }
@@ -168,27 +168,26 @@ public class BirbClient : MonoBehaviour {
                 Debug.Log("Received " + messageCode.ToString() + " message with key " + serverMessage.data);
                 // Write the JOIN, ROOM_KEY
                 DataCache.RoomKey = serverMessage.data;
-                if(currentCallback != null)
+                if(callbacks != null)
                 {
-                    currentCallback.Invoke(DataCache.RoomKey);
+                    callbacks[messageCode].Invoke(DataCache.RoomKey);
                 }
                 break;
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
                 if(DataCache.PlayerIndex == -1)
                     DataCache.PlayerIndex = int.Parse(serverMessage.data);
-                if(currentCallback != null)
+                if(callbacks != null)
                 {
-                    Debug.Log("Running joined_room callback");
-                    currentCallback.Invoke(DataCache.PlayerIndex);
+                    callbacks[messageCode].Invoke(DataCache.PlayerIndex);
                 }
                 break;
             case (BirbMessageCode.BEGIN):
                 Debug.Log("Received " + messageCode.ToString() + " message with judge ID " + serverMessage.data);
-                if (currentCallback != null)
+                if (callbacks != null)
                 {
                     DataCache.JudgeIndex = int.Parse(serverMessage.data);
-                    currentCallback.Invoke(DataCache.JudgeIndex);
+                    callbacks[messageCode].Invoke(DataCache.JudgeIndex);
                 }
                 break;
             case (BirbMessageCode.GAME_STATE):
@@ -197,9 +196,9 @@ public class BirbClient : MonoBehaviour {
                 break;
             case (BirbMessageCode.GET_PROMPT):
                 Debug.Log("Received " + messageCode.ToString() + " message with prompt " + serverMessage.data);
-                if(currentCallback != null)
+                if(callbacks != null)
                 {
-                    currentCallback.Invoke();
+                    callbacks[messageCode].Invoke();
                 }
                 break;
             case (BirbMessageCode.DANCE_RECEVIED):

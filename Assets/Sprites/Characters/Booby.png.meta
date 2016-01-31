@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: 4a98814587deb4fbeaa8f95a62b0510c
+timeCreated: 1454206149
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Booby_0
+    21300002: Booby_1
+    21300004: Booby_2
+    21300006: Booby_3
+    21300008: Booby_4
+    21300010: Booby_5
+    21300012: Booby_6
+    21300014: Booby_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Booby_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 475
+        width: 332
+        height: 198
+      alignment: 9
+      pivot: {x: 0.29291248, y: 0.05448775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 234.75305, y: 31.211426}
+        - {x: 129.75305, y: 95.211426}
+        - {x: 95.75305, y: 155.21143}
+        - {x: 49.75305, y: 187.21143}
+        - {x: -32.24695, y: 187.21143}
+        - {x: -63.24695, y: 176.21143}
+        - {x: -97.24695, y: 125.211426}
+        - {x: -97.24695, y: 55.211426}
+        - {x: -87.24695, y: 23.211426}
+        - {x: -38.24695, y: -10.788574}
+        - {x: 40.75305, y: -10.788574}
+        - {x: 116.75305, y: 23.211426}
+        - {x: 193.75305, y: 13.211426}
+        - {x: 234.75305, y: 14.211426}
+    - name: Booby_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 470
+        width: 205
+        height: 208
+      alignment: 9
+      pivot: {x: 0.5316396, y: 0.93033016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.0138855, y: 14.491333}
+        - {x: -7.9861145, y: 14.491333}
+        - {x: -105.986115, y: -53.508667}
+        - {x: -108.986115, y: -61.508667}
+        - {x: -108.986115, y: -169.50867}
+        - {x: -61.986115, y: -193.50867}
+        - {x: -16.986115, y: -193.50867}
+        - {x: 15.0138855, y: -179.50867}
+        - {x: 96.013885, y: -135.50867}
+        - {x: 96.013885, y: -109.50867}
+    - name: Booby_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 322
+        width: 157
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.3054161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.500015, y: 83.35007}
+        - {x: -78.500015, y: 9.350067}
+        - {x: -78.500015, y: -36.649933}
+        - {x: 78.499985, y: -36.649933}
+        - {x: 78.499985, y: 5.350067}
+        - {x: 65.499985, y: 83.35007}
+    - name: Booby_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 282
+        width: 188
+        height: 165
+      alignment: 9
+      pivot: {x: 0.14809272, y: 0.9324091}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 86.15857, y: -153.8475}
+        - {x: 160.15857, y: -108.8475}
+        - {x: 160.15857, y: -16.847504}
+        - {x: 7.1585693, y: 11.152496}
+        - {x: -10.841431, y: 11.152496}
+        - {x: -27.84143, y: -59.847504}
+        - {x: -27.84143, y: -137.8475}
+        - {x: -12.841431, y: -153.8475}
+        - {x: 8.158569, y: -153.8475}
+        - {x: 21.15857, y: -136.8475}
+        - {x: 32.15857, y: -147.8475}
+        - {x: 45.15857, y: -153.8475}
+    - name: Booby_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 9
+        width: 287
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 139.5, y: -101.5}
+        - {x: 143.5, y: -84.5}
+        - {x: 143.5, y: -17.5}
+        - {x: 137.5, y: 11.5}
+        - {x: 126.5, y: 39.5}
+        - {x: 101.5, y: 85.5}
+        - {x: 85.5, y: 106.5}
+        - {x: 53.5, y: 135.5}
+        - {x: 33.5, y: 149.5}
+        - {x: -24.5, y: 149.5}
+        - {x: -37.5, y: 144.5}
+        - {x: -53.5, y: 135.5}
+        - {x: -85.5, y: 106.5}
+        - {x: -110.5, y: 71.5}
+        - {x: -131.5, y: 26.5}
+        - {x: -139.5, y: 0.5}
+        - {x: -143.5, y: -20.5}
+        - {x: -143.5, y: -78.5}
+        - {x: -139.5, y: -95.5}
+        - {x: -128.5, y: -115.5}
+        - {x: -107.5, y: -134.5}
+        - {x: -72.5, y: -147.5}
+        - {x: -52.5, y: -149.5}
+        - {x: 50.5, y: -149.5}
+        - {x: 76.5, y: -145.5}
+        - {x: 94.5, y: -139.5}
+        - {x: 113.5, y: -130.5}
+    - name: Booby_5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 138
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.3287964, y: 0.85702515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Booby_6
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 4
+        width: 85
+        height: 259
+      alignment: 9
+      pivot: {x: 0.84442425, y: 0.3126001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -71.77606, y: 178.03658}
+        - {x: -71.77606, y: 130.03658}
+        - {x: -46.776062, y: -11.963425}
+        - {x: -3.776062, y: -80.963425}
+        - {x: 10.223938, y: -80.963425}
+        - {x: 13.223938, y: -27.963425}
+        - {x: 13.223938, y: 56.036575}
+        - {x: -66.77606, y: 178.03658}
+    - name: Booby_7
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 26
+        width: 43
+        height: 58
+      alignment: 9
+      pivot: {x: 0.21333207, y: 0.9250607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -3.1732788, y: -53.65352}
+        - {x: 33.82672, y: -53.65352}
+        - {x: 33.82672, y: -13.653519}
+        - {x: 27.826721, y: 4.3464813}
+        - {x: -9.173279, y: 4.3464813}
+        - {x: -9.173279, y: -40.65352}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

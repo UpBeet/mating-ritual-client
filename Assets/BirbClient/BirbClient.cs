@@ -31,11 +31,6 @@ public class BirbClient : MonoBehaviour {
     GameStateManager gameStateManager;
 
     /// <summary>
-    /// The user's specific data.
-    /// </summary>
-    BirbUserData userData;
-
-    /// <summary>
     /// A generic callback to use for reponses.
     /// </summary>
     /// <param name="parameters"></param>
@@ -57,7 +52,6 @@ public class BirbClient : MonoBehaviour {
         Uri server = new Uri("ws://birb.herokuapp.com");
         Uri braxton = new Uri("ws://72.230.134.30:5000");
         socket = new WebSocket(server);
-        userData = new BirbUserData();
         yield return StartCoroutine(socket.Connect());
         int i = 0;
 
@@ -220,7 +214,7 @@ public class BirbClient : MonoBehaviour {
 
     private void BeginGame()
     {
-        SendBirbMessage(BirbMessageCode.BEGIN, userData.RoomKey, EmptyCallback);
+        SendBirbMessage(BirbMessageCode.BEGIN, DataCache.RoomKey, EmptyCallback);
     }
 
     private void debug(string message)

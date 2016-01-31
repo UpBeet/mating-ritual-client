@@ -49,6 +49,11 @@ public class LobbyScreen : IGameState {
         client.SendBirbMessage(BirbClient.BirbMessageCode.BEGIN, DataCache.RoomKey, GameStarted);
 	}
 
+	// Called when the leave game button is pressed.
+	public void OnPressLeaveGameButton () {
+		PopState ();
+	}
+
 	// Sets whether or not the host controls are shown.
 	private void ShowHostControls (bool isHost) {
 		transform.Find ("GUI Canvas/Content/Waiting For Host Text").gameObject.SetActive (!isHost);

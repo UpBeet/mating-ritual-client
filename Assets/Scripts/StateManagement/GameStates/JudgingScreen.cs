@@ -23,6 +23,12 @@ public class JudgingScreen : IGameState {
 	// Initialize this game state.
 	public override void OnInitializeState () {
 		base.OnInitializeState ();
+
+		// Properly sort background.
+		GuiCanvas.worldCamera = Camera.main;
+		GuiCanvas.sortingLayerName = "Floor";
+
+		// Test loading rigs.
 		LoadRigs (new int[] { 0, 1, 2, 4 }, new HandlePositionPairSet[4][]);
 
 		// Ensure camera drag component.
@@ -47,6 +53,11 @@ public class JudgingScreen : IGameState {
 	public override void OnExitState () {
 		base.OnExitState ();
 		Destroy (Camera.main.GetComponent<CameraDrag> ());
+	}
+
+	// Sets the prompt text.
+	public void SetPrompt (string prompt) {
+		transform.Find ("Front Canvas/Top/Prompt").GetComponent<Text> ().text = prompt;
 	}
 
 	// Load the rigs and their animations on to this screen.
@@ -96,6 +107,7 @@ public class JudgingScreen : IGameState {
 		GameObject anim = Instantiate (winnerAnimation);
 		anim.transform.localScale = Vector3.one;
 		anim.transform.position = winnerPos;
+		anim.transform.SetParent (transform);
 
 		// Play bird sound.
 		Camera.main.GetComponent<AudioSource> ().PlayOneShot (bird.sound);

@@ -15,6 +15,13 @@ public class LobbyScreen : IGameState {
 		SetParticipatingBirds (new []{
 			0, 3, 4, 7
 		});
+
+		// Show my bird.
+		Bird bird = GameController.GetBird (DataCache.PlayerIndex);
+		Debug.LogWarning (bird);
+		transform.Find ("GUI Canvas/Content/Character Image").GetComponent<Image> ().sprite = bird.headSprite;
+		transform.Find ("GUI Canvas/Content/Character Name").GetComponent<Text> ().text = bird.name;
+		Camera.main.GetComponent<AudioSource> ().PlayOneShot (bird.sound);
 	}
 
 	// Set the birds currently participating in this game.
@@ -37,7 +44,6 @@ public class LobbyScreen : IGameState {
 	public void OnPressStartButton () {
         BirbClient client = GameObject.Find("BirbClient").GetComponent<BirbClient>();
         client.SendBirbMessage(BirbClient.BirbMessageCode.BEGIN, DataCache.RoomKey, GameStarted);
-        //Debug.LogWarning ("Start game not implemented server-side. Initalizing client-side testing.");
 	}
 
 	// Sets whether or not the host controls are shown.

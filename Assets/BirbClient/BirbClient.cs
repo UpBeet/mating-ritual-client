@@ -171,9 +171,7 @@ public class BirbClient : MonoBehaviour {
                 if(currentCallback != null)
                 {
                     currentCallback.Invoke(DataCache.RoomKey);
-                    currentCallback = null;
                 }
-                SendBirbMessage(BirbMessageCode.JOIN_ROOM, serverMessage.data, EmptyCallback);
                 break;
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
@@ -181,8 +179,8 @@ public class BirbClient : MonoBehaviour {
                     DataCache.PlayerIndex = int.Parse(serverMessage.data);
                 if(currentCallback != null)
                 {
+                    Debug.Log("Running joined_room callback");
                     currentCallback.Invoke(DataCache.PlayerIndex);
-                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.BEGIN):
@@ -191,7 +189,6 @@ public class BirbClient : MonoBehaviour {
                 {
                     DataCache.JudgeIndex = int.Parse(serverMessage.data);
                     currentCallback.Invoke(DataCache.JudgeIndex);
-                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.GAME_STATE):
@@ -203,7 +200,6 @@ public class BirbClient : MonoBehaviour {
                 if(currentCallback != null)
                 {
                     currentCallback.Invoke();
-                    currentCallback = null;
                 }
                 break;
             case (BirbMessageCode.DANCE_RECEVIED):

@@ -29,6 +29,10 @@ public class HandleController : MonoBehaviour {
 	// Sets whether or not this handle is visible.
 	public void SetVisible (bool visible) {
 
+		if (hideables == null) {
+			hideables = GetComponentsInChildren<HideableInterfaceElement> ();
+		}
+
 		// Show/hide handles.
 		for (int i = 0; i < hideables.Length; i++) {
 			hideables [i].SetShown (visible);

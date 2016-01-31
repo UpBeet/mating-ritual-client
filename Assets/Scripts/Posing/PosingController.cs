@@ -80,6 +80,9 @@ public class PosingController : MonoBehaviour {
 
 	// Sets whether or not all the handles are visible.
 	public void SetAllHandlesVisible (bool visible) {
+		if (handles == null) {
+			handles = GetComponentsInChildren<HandleController> ();
+		}
 		for (int i = 0; i < handles.Length; i++) {
 			handles [i].SetVisible (visible);
 		}

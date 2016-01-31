@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	// Get a bird by its index.
-	public Bird GetBird (int index) {
-		return birds [index];
+	public static Bird GetBird (int index) {
+		return singleton.birds [index];
 	}
 }

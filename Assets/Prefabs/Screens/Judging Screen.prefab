@@ -90,7 +90,7 @@ MonoBehaviour:
   characterSpacing: 10
   selectMateButtonPrefab: {fileID: 11492704, guid: fe16167a12c714672ad6897571b404c5,
     type: 2}
-  cameraMoveSpeed: 0.25
+  winnerAnimation: {fileID: 196238, guid: af99cfbd5ea0941a8825ac1f7eae07b9, type: 2}
 --- !u!114 &11444010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,6 +183,10 @@ Prefab:
       propertyPath: characterSpacing
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: winnerAnimation
+      value: 
+      objectReference: {fileID: 196238, guid: af99cfbd5ea0941a8825ac1f7eae07b9, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192294}

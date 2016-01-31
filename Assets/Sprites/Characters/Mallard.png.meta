@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: c8ffe9ba1b314479e9da91839db7c8c4
+timeCreated: 1454206973
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mallard_0
+    21300002: Mallard_1
+    21300004: Mallard_2
+    21300006: Mallard_3
+    21300008: Mallard_4
+    21300010: Mallard_5
+    21300012: Mallard_6
+    21300014: Mallard_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mallard_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 475
+        width: 239
+        height: 198
+      alignment: 9
+      pivot: {x: 0.39687318, y: 0.05448775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100.14731, y: 147.21143}
+        - {x: 63.14731, y: 180.21143}
+        - {x: 40.14731, y: 187.21143}
+        - {x: -25.852692, y: 187.21143}
+        - {x: -48.85269, y: 182.21143}
+        - {x: -94.85269, y: 133.21143}
+        - {x: -94.85269, y: 47.211426}
+        - {x: -59.85269, y: 2.2114258}
+        - {x: -24.852692, y: -10.788574}
+        - {x: 45.14731, y: -10.788574}
+        - {x: 144.14731, y: -2.7885742}
+        - {x: 144.14731, y: 36.211426}
+        - {x: 113.14731, y: 116.211426}
+    - name: Mallard_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 470
+        width: 205
+        height: 208
+      alignment: 9
+      pivot: {x: 0.5316396, y: 0.9365669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.0138855, y: 13.194092}
+        - {x: -7.9861145, y: 13.194092}
+        - {x: -105.986115, y: -54.80591}
+        - {x: -108.986115, y: -62.80591}
+        - {x: -108.986115, y: -170.80591}
+        - {x: -61.986115, y: -194.80591}
+        - {x: -16.986115, y: -194.80591}
+        - {x: 15.0138855, y: -180.80591}
+        - {x: 96.013885, y: -136.80591}
+        - {x: 96.013885, y: -110.80591}
+    - name: Mallard_2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 333
+        width: 117
+        height: 95
+      alignment: 9
+      pivot: {x: 0.48891246, y: 0.1176594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.20276, y: 83.82236}
+        - {x: -57.20276, y: -11.177643}
+        - {x: 59.79724, y: -11.177643}
+        - {x: 59.79724, y: 83.82236}
+    - name: Mallard_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 282
+        width: 188
+        height: 165
+      alignment: 9
+      pivot: {x: 0.15499294, y: 0.90882325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 84.86133, y: -149.95584}
+        - {x: 158.86133, y: -104.95584}
+        - {x: 158.86133, y: -12.955841}
+        - {x: 5.861328, y: 15.044159}
+        - {x: -12.138672, y: 15.044159}
+        - {x: -29.138672, y: -55.95584}
+        - {x: -29.138672, y: -133.95584}
+        - {x: -14.138672, y: -149.95584}
+        - {x: 6.861328, y: -149.95584}
+        - {x: 19.861328, y: -132.95584}
+        - {x: 30.861328, y: -143.95584}
+        - {x: 43.86133, y: -149.95584}
+    - name: Mallard_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 14
+        width: 286
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 143, y: -86.5}
+        - {x: 143, y: -17.5}
+        - {x: 139, y: 4.5}
+        - {x: 132, y: 26.5}
+        - {x: 118, y: 58.5}
+        - {x: 95, y: 95.5}
+        - {x: 65, y: 129.5}
+        - {x: 33, y: 146.5}
+        - {x: 24, y: 149.5}
+        - {x: -29, y: 149.5}
+        - {x: -51, y: 138.5}
+        - {x: -79, y: 113.5}
+        - {x: -97, y: 92.5}
+        - {x: -125, y: 44.5}
+        - {x: -141, y: -6.5}
+        - {x: -143, y: -17.5}
+        - {x: -143, y: -83.5}
+        - {x: -140, y: -98.5}
+        - {x: -117, y: -127.5}
+        - {x: -94, y: -139.5}
+        - {x: -72, y: -146.5}
+        - {x: -48, y: -149.5}
+        - {x: 55, y: -149.5}
+        - {x: 87, y: -144.5}
+        - {x: 119, y: -126.5}
+        - {x: 131, y: -111.5}
+    - name: Mallard_5
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 138
+        width: 27
+        height: 41
+      alignment: 9
+      pivot: {x: 0.29784703, y: 0.89937645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Mallard_6
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 106
+        width: 141
+        height: 53
+      alignment: 9
+      pivot: {x: 0.54516214, y: 0.5171644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34.86786, y: 25.590286}
+        - {x: -76.86786, y: -3.4097137}
+        - {x: -76.86786, y: -16.409714}
+        - {x: -42.86786, y: -27.409714}
+        - {x: 64.13214, y: -27.409714}
+        - {x: 64.13214, y: -20.409714}
+        - {x: -15.867859, y: 25.590286}
+    - name: Mallard_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 32
+        width: 44
+        height: 57
+      alignment: 9
+      pivot: {x: 0.21055326, y: 0.9521853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.735657, y: -54.27456}
+        - {x: 34.735657, y: -13.274559}
+        - {x: 28.735657, y: 2.725441}
+        - {x: -9.264343, y: 2.725441}
+        - {x: -9.264343, y: -54.27456}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

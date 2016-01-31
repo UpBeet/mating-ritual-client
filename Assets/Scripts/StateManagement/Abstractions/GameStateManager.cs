@@ -27,6 +27,7 @@ public class GameStateManager : MonoBehaviour {
 
 	/// <summary>
 	/// The UUID of the current adventure.
+    /// (Wes actually kept this shit in.)
 	/// </summary>
 	public string CurrentAdventureUUID { get; set; }
 

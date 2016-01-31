@@ -24,6 +24,11 @@ public class BirbClient : MonoBehaviour {
     /// </summary>
     WebSocket socket;
 
+    /// <summary>
+    /// The game state manager.
+    /// </summary>
+    GameStateManager gameStateManager;
+
     #endregion
 
     #region Unity Engine Methods
@@ -34,7 +39,7 @@ public class BirbClient : MonoBehaviour {
     /// <returns>Nothing right now.</returns>
     IEnumerator Start()
     {
-        //72.230.134.30 :5000
+        gameStateManager = GetComponent<GameStateManager>();
         Uri server = new Uri("ws://birb.herokuapp.com");
         Uri braxton = new Uri("ws://72.230.134.30:5000");
         socket = new WebSocket(server);
@@ -136,6 +141,7 @@ public class BirbClient : MonoBehaviour {
                 break;
             case (BirbMessageCode.JOINED_ROOM):
                 Debug.Log("Received " + messageCode.ToString() + " message with userID " + serverMessage.data);
+                // TODO: Switch the game screen
                 break;
             default:
                 break;

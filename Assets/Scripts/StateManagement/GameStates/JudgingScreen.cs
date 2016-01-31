@@ -84,6 +84,7 @@ public class JudgingScreen : IGameState {
 
 	// Show the winner at the specified index.
 	private void ShowWinner (int index) {
+		Bird bird = GameController.GetBird (index);
 		Vector2 winnerPos = rigs [index].transform.position;
 
 		// Drag to winner.
@@ -95,5 +96,8 @@ public class JudgingScreen : IGameState {
 		GameObject anim = Instantiate (winnerAnimation);
 		anim.transform.localScale = Vector3.one;
 		anim.transform.position = winnerPos;
+
+		// Play bird sound.
+		Camera.main.GetComponent<AudioSource> ().PlayOneShot (bird.sound);
 	}
 }

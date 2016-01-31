@@ -7,10 +7,21 @@ public class BirbClient : MonoBehaviour {
 
     #region Data Properties
 
-    public enum BirbMessageCode { CONNECT };
+    /// <summary>
+    /// An enumeration of all of the message codes that can be sent
+    /// to, or received from, the birb server.
+    /// </summary>
+    public enum BirbMessageCode { CONNECT, CREATE_ROOM, JOIN, ENTER_ROOM, JOINED,
+        BEGIN, GAME_STATE, SEND_PROMPT, GET_PROMPT, SEND_DANCE, DANCE_RECEVIED,
+        PICK_WINNER, SEND_DANCES, ROUND_WINNER, GAME_WINNER, INVALID_CODE };
 
+    /// <summary>
+    /// A collection of strings corresponding to birb message codes.
+    /// </summary>
     public Dictionary<int, string> MessageStrings = new Dictionary<int, string>() {
-            { (int)BirbMessageCode.CONNECT, "CONNECT" }
+            { (int)BirbMessageCode.CONNECT, "CONNECT" },
+            { (int)BirbMessageCode.CREATE_ROOM, "CREATE_ROOM" },
+            { (int)BirbMessageCode.JOIN, "JOIN" }
     };
 
     #endregion
@@ -26,7 +37,10 @@ public class BirbClient : MonoBehaviour {
 
     #region Unity Engine Methods
 
-    // Use this for initialization
+    /// <summary>
+    /// Start the Birb Client.
+    /// </summary>
+    /// <returns>Nothing right now.</returns>
     IEnumerator Start()
     {
         socket = new WebSocket(new Uri("ws://birb.herokuapp.com"));
@@ -62,8 +76,12 @@ public class BirbClient : MonoBehaviour {
     /// <param name="data">The data to send through.</param>
     public void SendBirbMessage(BirbMessageCode code, object data)
     {
-        // TODO: Maybe the curlys around the data block will cause an issue...
-        socket.SendString("\"Action:\" \"" + MessageStrings[(int)code] + "\", \"Data\": {\"" + JsonUtility.ToJson(data) + "\"}");
+        string fullMessage = "\"Action:\" \"" + MessageStrings[(int)code] + "\", \"Data\": " + JsonUtility.ToJson(data);
+
+        // Debugging
+        Debug.Log("Sending birb message: " + fullMessage);
+
+        socket.SendString(fullMessage);
     }
 
     #endregion
@@ -76,8 +94,27 @@ public class BirbClient : MonoBehaviour {
     /// <param name="message">JSON string parameter coming in</param>
     private void Process(string message)
     {
-        ServerMessage serverMessage = ServerMessage.CreateFromJSON(message);
+        try {
+            ServerMessage serverMessage = ServerMessage.CreateFromJSON(message);
+        } catch (ArgumentException e) {
+            Debug.LogError("Received invalid birb message:\n" + e);
+            return;
+        }
 
+        // Parse out the message code
+        BirbMessageCode messageCode = BirbMessageCode.INVALID_CODE;
+        foreach (BirbMessageCode code in MessageStrings.Keys)
+            if (MessageStrings[(int)code] == message)
+                messageCode = code;
+
+        switch (messageCode)
+        {
+            case (BirbMessageCode.CONNECT):
+                Debug.Log("Received CONNECT message");
+                break;
+            default:
+                break;
+        }
     }
 
     #endregion

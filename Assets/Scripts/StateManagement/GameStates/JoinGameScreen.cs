@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 // Controls the join game screen.
 public class JoinGameScreen : IGameState {
@@ -9,6 +10,14 @@ public class JoinGameScreen : IGameState {
 	// Called when the join game button is clicked.
 	public void OnClickJoinGameButton () {
 		Debug.LogWarning ("Attempting to join room " + RoomCode + ".");
+
+		// Check for input.
+		if (string.IsNullOrEmpty (RoomCode)) {
+			GetComponentInChildren<InputField> ().Select ();
+			return;
+		}
+
+		// Test join game.
 		BeginJoinGame (RoomCode.ToUpper ());
 	}
 
